@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Distancify AB</Authors>
+    <Copyright>Copyright © Distancify AB 2019</Copyright>
+    <RepositoryUrl></RepositoryUrl>
+    <PackageTags>serilog</PackageTags>
+    <PackageIconUrl>https://distancify.com/media/favicon.png</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/distancify/Distancify.SerilogExtensions</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/distancify/Distancify.SerilogExtensions/LICENSE</PackageLicenseUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Serilog" Version="2.7.1" />
+  </ItemGroup>
+
+</Project>
