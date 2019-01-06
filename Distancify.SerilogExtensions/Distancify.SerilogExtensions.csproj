@@ -10,6 +10,7 @@
     <PackageIconUrl>https://distancify.com/media/favicon.png</PackageIconUrl>
     <PackageProjectUrl>https://github.com/distancify/Distancify.SerilogExtensions</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/distancify/Distancify.SerilogExtensions/LICENSE</PackageLicenseUrl>
+    <Description>A set of common extensions and helpers we use when using Serilog</Description>
   </PropertyGroup>
 
   <ItemGroup>
