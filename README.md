@@ -1,6 +1,6 @@
-# Distancify.LitiumAddOns.Foundation
+# Distancify.SerilogExtensions
 
-[![Build status](https://ci.appveyor.com/api/projects/status/0lyu8fx7s67is8wv?svg=true)](https://ci.appveyor.com/project/KristofferLindvall/distancify-litiumaddons-foundation)
+[![Build status](https://ci.appveyor.com/api/projects/status/9t07o2p9fplx876i?svg=true)](https://ci.appveyor.com/project/DistancifyAB/distancify-serilogextensions)
 
 This project contains a couple of extensions and helpers that are commonly used among all our projects using Serilog.
 
