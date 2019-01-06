@@ -6,6 +6,12 @@ This project contains a couple of extensions and helpers that are commonly used 
 
 ## How to use
 
+### Install
+
+```
+Install-Package Distancify.SerilogExtensions
+```
+
 ### Profiling Example
 
 This project contains a simple profiler that will include the time elapsed between log messages.
