@@ -11,6 +11,9 @@
     <PackageProjectUrl>https://github.com/distancify/Distancify.SerilogExtensions</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/distancify/Distancify.SerilogExtensions/LICENSE</PackageLicenseUrl>
     <Description>A set of common extensions and helpers we use when using Serilog</Description>
+    <Version>0.0.1</Version>
+    <AssemblyVersion>0.0.1.0</AssemblyVersion>
+    <FileVersion>0.0.1.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
