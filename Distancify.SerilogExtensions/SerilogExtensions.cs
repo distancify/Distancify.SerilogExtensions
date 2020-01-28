@@ -51,11 +51,11 @@ namespace Distancify.SerilogExtensions
             var result = logger.ForContext("Incident", priority.ToString());
             if (!string.IsNullOrWhiteSpace(incidentType))
             {
-                result.ForContext("IncidentType", incidentType);
+                result = result.ForContext("IncidentType", incidentType);
             }
             if (!string.IsNullOrWhiteSpace(incidentId))
             {
-                result.ForContext("IncidentId", incidentId);
+                result = result.ForContext("IncidentId", incidentId);
             }
             return result;
         }
