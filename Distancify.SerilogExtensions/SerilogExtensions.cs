@@ -13,7 +13,7 @@ namespace Distancify.SerilogExtensions
         {
             get
             {
-                return _logger ?? Serilog.Log.Logger;
+                return _logger ?? global::Serilog.Log.Logger;
             }
             set
             {
@@ -25,6 +25,14 @@ namespace Distancify.SerilogExtensions
         /// Creates a logger for this class
         /// </summary>
         public static ILogger Log<T>(this T target)
+        {
+            return Logger.ForContext(typeof(T));
+        }
+
+        /// <summary>
+        /// Creates a logger for this class. Identical to Log&lt;T&gt;. Use if you need to avoid ambiguous references with legacy logging frameworks.
+        /// </summary>
+        public static ILogger Serilog<T>(this T target)
         {
             return Logger.ForContext(typeof(T));
         }
