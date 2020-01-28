@@ -1,7 +1,5 @@
 # Distancify.SerilogExtensions
 
-[![Build status](https://ci.appveyor.com/api/projects/status/9t07o2p9fplx876i?svg=true)](https://ci.appveyor.com/project/DistancifyAB/distancify-serilogextensions)
-
 This project contains a couple of extensions and helpers that are commonly used among all our projects using Serilog.
 
 ## How to use
@@ -38,6 +36,25 @@ select percentile(ElapsedMs, 95) as ElapsedMs from stream where Profiler = 'My P
 And it will show up like this:
 
 ![](profiling-example.png)
+
+### Logging incidents
+
+At Distancify, some log messages should trigger alarms to our on-call staff. While this can be configured in the log server, it's
+often easier to make sure incidents are created from the code.
+
+In order to standardize how we log incidents, there's an extension called `ForIncident` which is used like this:
+
+```csharp
+// Simple incident:
+this.Log().ForIncident(IncidentPriority.P2).Error("Something went wrong")
+
+// Incident around a specific entity (in this case an order), for collecting all messages around the same incident:
+this.Log().ForIncident(IncidentPriority.P2, incidentId: order.Id).Error("Something went wrong")
+
+// Sometimes, it could be good to group different types of log messages as the same type of incident, for example for reference to a standard operating proceedure. The following two messages belong to the same incident:
+this.Log().ForIncident(IncidentPriority.P2, incidentType: "ORDER_EXPORT_FAIL", incidentId: order.Id).Error("Could not find product")
+this.Log().ForIncident(IncidentPriority.P2, incidentType: "ORDER_EXPORT_FAIL", incidentId: order.Id).Error("Could not find customer")
+```
 
 ## Publishing
 
