@@ -37,5 +37,27 @@ namespace Distancify.SerilogExtensions
         {
             return logger.ForContext(new[] { new ProfilingEnricher(name) });
         }
+
+        /// <summary>
+        /// Creates a log message tied to an incident. Can be used to trigger alarms.
+        /// </summary>
+        /// <param name="logger"></param>
+        /// <param name="priority"></param>
+        /// <param name="incidentType">In order to group type incidents that may have different messages, this code can be used</param>
+        /// <param name="incidentId">In order to group multiple errors into the same incident instance, this ID can be used</param>
+        /// <returns></returns>
+        public static ILogger ForIncident(this ILogger logger, IncidentPriority priority, string incidentType = null, string incidentId = null)
+        {
+            var result = logger.ForContext("Incident", priority.ToString());
+            if (!string.IsNullOrWhiteSpace(incidentType))
+            {
+                result.ForContext("IncidentType", incidentType);
+            }
+            if (!string.IsNullOrWhiteSpace(incidentId))
+            {
+                result.ForContext("IncidentId", incidentId);
+            }
+            return result;
+        }
     }
 }
